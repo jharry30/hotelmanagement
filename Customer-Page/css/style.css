@@ -1,0 +1,132 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 270px;
+    height: 100vh;
+    background-color: #ffffff; /* White background for the sidebar */
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin: 20px 0;
+    display: flex; /* Use flex to align items */
+    align-items: center; /* Center items vertically */
+}
+
+.sidebar .logo img {
+    width: 90px;
+    height: auto;
+    margin-left: 22px;
+}
+
+.logo-label {
+    font-size: 25px; /* Adjust the font size as needed */
+    color: #313130; /* Yellow color for the label */
+}
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+}
+
+.sidebar ul li {
+    margin: 0; /* Removed margin between buttons */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333; /* Dark text color for contrast */
+    display: flex;
+    align-items: center;
+    padding: 20px; /* Adjusted padding for height */
+    transition: background 0.3s;
+    width: 100%; /* Full width to align with sidebar */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.sidebar ul li a i {
+    margin-right: 15px;
+    color: #333333; /* Dark blue icon color */
+}
+
+.sidebar ul li a:hover {
+    background-color: #fcbb07; /* Gold color for hover effect */
+    color: #ffffff; /* White text on hover */
+}
+
+.main-content {
+    margin-left: 270px; /* Updated to match the sidebar width */
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    background-image: url('http://localhost/Hotel%20Management%20System/Customer-Page/img/bg2.jpg'); /* Update with the correct URL */
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    min-height: 100vh; /* Ensure it covers at least the viewport height */
+    color: #302f2f; /* Change text color to white for better contrast against the background */
+}
+.header {
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header p {
+    color: gray;
+}
+
+/* Burger icon for mobile view */
+.burger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+}
+
+.header {
+    grid-area: header;
+    height: 70px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile view styles */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
